@@ -1,0 +1,38 @@
+{
+  "name": "MassiveForward",
+  "description": "Bot",
+  "keywords": [
+    "telethon",
+    "telegram"
+  ],
+  "repository": "https://github.com/yadianluffy/MassiveForward/",
+  "success_url": "/welcome",
+  "env": {
+     "BOT_TOKEN": {
+        "description": "Make a bot from https://t.me/BotFather and enter the token here.",
+        "value": ""
+      },
+      "API_ID": {
+        "description": "Get this value from https://my.telegram.org/apps",
+        "value": ""
+      },
+      "API_HASH": {
+        "description": "Get this value from https://my.telegram.org/apps",
+        "value": ""
+      }
+      
+      },
+      "STRING_SESSION": {
+        "description" : "Telethon SessionString",
+        "value" : ""
+      
+      
+  },
+  "formation": {
+      "worker": {
+        "quantity": 1,
+        "size": "free"
+      }
+    },
+  "image": "heroku/python"
+}
