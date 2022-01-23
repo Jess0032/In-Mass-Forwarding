@@ -15,12 +15,13 @@
     "STRING_SESSION": {
       "description": "Ejecuta este codigo manual desde la pc para obtener el autorizo",
       "required": true
-    }
 
     },
      "BOT_TOKEN": {
      "description": "Ejecuta este codigo manual desde la pc para obtener el autorizo",
      "required": true
+     }
+    
     },
 
         "formation": {
