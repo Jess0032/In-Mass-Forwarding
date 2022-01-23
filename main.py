@@ -21,15 +21,15 @@ async def forward_all(event):
             global conversation
             params = {'reverse': True}
             conversation[event.peer_id.user_id] = conv
-            await conv.send_message("Diga el chat desde donde desea reeviar. (ORIGEN)")
+            await conv.send_message("Diga el chat desde donde desea reenviar. (ORIGEN)")
             text = (await conv.get_response()).raw_text
             params['entity'] = int(text) if isdigit(text) else text
-            await conv.send_message("Diga el chat hacia donde desea reeviar. (DESTINO)")
+            await conv.send_message("Diga el chat hacia donde desea reenviar. (DESTINO)")
             text = (await conv.get_response()).raw_text
             destiny = int(text) if isdigit(text) else text
 
-            await conv.send_message('Desea reenviar por palabra clave o por ragon de id??', buttons=[
-                                    Button.inline('PalabraClave', b'data_pc'),
+            await conv.send_message('Desea reenviar por palabra clave o por rango de id??', buttons=[
+                                    Button.inline('Palabra Clave', b'data_pc'),
                                     Button.inline('Rango de id', b'data_rango')])
 
             press = await conv.wait_event(events.CallbackQuery(func=lambda e: e.sender_id == event.peer_id.user_id, data=re.compile(b'data_')))
