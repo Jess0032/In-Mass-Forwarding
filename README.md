@@ -6,3 +6,8 @@
     API_HASH - Get this value from https://my.telegram.org/apps
     STRING_SESSION - 
     BOT_TOKEN - 
+
+
+## Deploy
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/yadianluffy/MergeBot)
