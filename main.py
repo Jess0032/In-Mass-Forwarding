@@ -14,7 +14,7 @@ conversation = {}
 def isdigit(string):
     return bool(re.match(r'[-+]?(?:\d+(?:\.\d*)?|\.\d+)', string))
 
-@bot.on(NewMessage(pattern='/massive_forward'))
+@bot.on(NewMessage(pattern='/forward'))
 async def forward_all(event):
     try:
         async with bot.conversation(await event.get_chat()) as conv:
