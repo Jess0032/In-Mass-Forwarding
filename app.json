@@ -1,0 +1,33 @@
+{
+  "name": "Auto Forward",
+  "description": "Magic",
+  "env": {
+    
+    "API_ID": {
+      "description": "Get this value from my.telegram.org.",
+      "required": true
+    },
+    "API_HASH": {
+      "description": "Get this value from my.telegram.org.",
+      "required": true
+
+    },
+    "STRING_SESSION": {
+      "description": "Ejecuta este codigo manual desde la pc para obtener el autorizo",
+      "required": true
+    }
+
+    },
+     "BOT_TOKEN": {
+     "description": "Ejecuta este codigo manual desde la pc para obtener el autorizo",
+     "required": true
+    },
+
+        "formation": {
+            "worker": {
+                "quantity": 1,
+                "size": "free" 
+      }     
+    }
+  }
+
