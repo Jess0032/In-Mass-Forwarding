@@ -1,5 +1,5 @@
 {
-  "name": "Auto Forward",
+  "name": "In-Mass-Forward",
   "description": "Magic",
   "env": {
     
@@ -13,12 +13,12 @@
 
     },
     "STRING_SESSION": {
-      "description": "Ejecuta este codigo manual desde la pc para obtener el autorizo",
+      "description": "Telethon string session",
       "required": true
 
     },
      "BOT_TOKEN": {
-     "description": "Ejecuta este codigo manual desde la pc para obtener el autorizo",
+     "description": "@bothfather",
      "required": true
      }
     
