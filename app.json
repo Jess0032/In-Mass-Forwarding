@@ -33,6 +33,6 @@
         "quantity": 1,
         "size": "free"
       }
-    },
+
   "image": "heroku/python"
 }
