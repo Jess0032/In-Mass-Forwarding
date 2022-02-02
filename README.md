@@ -11,8 +11,8 @@
 
     API_ID - Get this value from https://my.telegram.org/apps
     API_HASH - Get this value from https://my.telegram.org/apps
-    STRING_SESSION - 
-    BOT_TOKEN - 
+    STRING_SESSION - Telethon string session required
+    BOT_TOKEN - Get this value from @Botfather
 
 
 ## Deploy
