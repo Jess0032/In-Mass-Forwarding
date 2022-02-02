@@ -1,5 +1,5 @@
 ## In-Mass-Forwarding
-
+This bot is for forward video and media from channel to another easly by id message and keywords
 
 ## Comands
 
