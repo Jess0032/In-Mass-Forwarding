@@ -1,5 +1,12 @@
 ## In-Mass-Forwarding
 
+
+## Comands
+!!!
+forward - start process
+cancel - cancel current job
+!!!
+
 ## Environment Variables
 
     API_ID - Get this value from https://my.telegram.org/apps
