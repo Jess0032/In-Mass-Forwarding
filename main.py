@@ -61,10 +61,15 @@ async def forward(event):
 
 async def forwardelements(destiny, params):
     print('reenviando')
+    count = 0
     async with TelegramClient(StringSession(STRING_SESSION), API_ID, API_HASH) as client:
         async for message in client.iter_messages(**params):
             if isinstance(message, patched.Message):
                 await message.forward_to(destiny)
+                count++
+                if count > 29:
+                    await asyncio.sleep(27)
+                    count = 0
 
 
 if __name__ == "__main__":
