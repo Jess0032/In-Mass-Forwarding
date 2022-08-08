@@ -1,0 +1,34 @@
+{
+  "name": "In-Mass-Forward",
+  "description": "Magic",
+  "env": {
+    
+    "API_ID": {
+      "description": "Get this value from my.telegram.org.",
+      "required": true
+    },
+    "API_HASH": {
+      "description": "Get this value from my.telegram.org.",
+      "required": true
+
+    },
+    "STRING_SESSION": {
+      "description": "Telethon string session",
+      "required": true
+
+    },
+     "BOT_TOKEN": {
+     "description": "@bothfather",
+     "required": true
+     }
+    
+    },
+
+        "formation": {
+            "worker": {
+                "quantity": 1,
+                "size": "free" 
+      }     
+    }
+  }
+
