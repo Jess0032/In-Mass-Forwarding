@@ -64,7 +64,11 @@ async def forwardelements(destiny, params):
     async with TelegramClient(StringSession(STRING_SESSION), API_ID, API_HASH) as client:
         async for message in client.iter_messages(**params):
             if isinstance(message, patched.Message):
-                await bot.send_message(destiny, message)
+                try:
+                    await bot.send_message(destiny, message)
+                except errors.FloodWaitError as e:
+                    print('Flood for', e.seconds)
+                    asyncio.sleep(e.seconds)
 
 
 if __name__ == "__main__":
