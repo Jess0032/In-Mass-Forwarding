@@ -1,11 +1,11 @@
 import asyncio
 import re
-from curses.ascii import isdigit
 from telethon.sessions import StringSession
 from telethon import events, Button
 from telethon.tl import patched
 from telethon.tl.custom import conversation
 from telethon.events import NewMessage
+from telethon import errors
 
 from config import *
 
@@ -63,13 +63,14 @@ async def forwardelements(destiny, params):
     print('reenviando')
     count = 0
     async with TelegramClient(StringSession(STRING_SESSION), API_ID, API_HASH) as client:
+        print(client.session.save())
         async for message in client.iter_messages(**params):
             if isinstance(message, patched.Message):
-                await message.forward_to(destiny)
-                count++
-                if count > 29:
-                    await asyncio.sleep(27)
-                    count = 0
+                try:
+                    await client.send_message(entity=destiny, message=message)
+                except errors.FloodWaitError as e:
+                    print('Flood for', e.seconds)
+                    await asyncio.sleep(e.seconds)
 
 
 if __name__ == "__main__":
