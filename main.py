@@ -64,7 +64,7 @@ async def forwardelements(destiny, params):
     async with TelegramClient(StringSession(STRING_SESSION), API_ID, API_HASH) as client:
         async for message in client.iter_messages(**params):
             if isinstance(message, patched.Message):
-                await message.forward_to(destiny)
+                await bot.send_message(destiny, message)
 
 
 if __name__ == "__main__":
