@@ -67,6 +67,7 @@ async def forwardelements(destiny, params):
             if isinstance(message, patched.Message):
                 try:
                     await client.send_message(entity=destiny, message=message)
+                    await asyncio.sleep(1)
                 except errors.FloodWaitError as e:
                     print('Flood for', e.seconds)
                     await asyncio.sleep(e.seconds)
