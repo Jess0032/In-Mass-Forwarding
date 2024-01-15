@@ -1,4 +1,5 @@
 import asyncio
+import time
 import re
 from telethon.sessions import StringSession
 from telethon import events, Button
@@ -61,13 +62,17 @@ async def forward(event):
 
 async def forwardelements(destiny, params):
     print('reenviando')
+    message_count = 0
     async with TelegramClient(StringSession(STRING_SESSION), API_ID, API_HASH) as client:
         print(client.session.save())
         async for message in client.iter_messages(**params):
             if isinstance(message, patched.Message):
                 try:
                     await client.send_message(entity=destiny, message=message)
-                    await asyncio.sleep(1)
+                    message_count += 1
+                    if message_count % 1000 == 0:
+                        print(f'Reenviados {message_count} mensajes. Descansando durante 1 hora...')
+                        time.sleep(3650)  # Esperar 1 hora (3600 segundos)
                 except errors.FloodWaitError as e:
                     print('Flood for', e.seconds)
                     await asyncio.sleep(e.seconds)
